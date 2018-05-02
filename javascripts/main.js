@@ -1,3 +1,3 @@
-const binEvents = require('./events');
+const initializer = require('./data');
 
-binEvents();
+initializer();
