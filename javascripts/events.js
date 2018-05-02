@@ -18,10 +18,19 @@ const changeButtonText = () => {
 const moveToCard = (e) => {
   const fishCard = $(e.target).closest('.fish');
   $('#snagged').append(fishCard);
+  $(e.target).text('Remove from Cart');
+  $(e.target).on('click', removeFromCard);
+};
+
+const removeFromCard = (e) => {
+  const fishCard = $(e.target).closest('.fish');
+  $('#available').append(fishCard);
+  $(e.target).text('Add to Cart');
+  $(e.target).on('click', moveToCard);
 };
 
 const binEvents = () => {
-  $('button.add').click(moveToCard);
+  $('button.add').on('click', moveToCard);
   $('#show-sale').click(() => {
     changeButtonText();
     filterFish();
