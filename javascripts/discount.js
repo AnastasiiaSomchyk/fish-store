@@ -4,7 +4,7 @@ const applySale = () => {
   $('.on-sale').each((i, fishCard) => {
     const basePriceElem = $(fishCard).find('.price');
     const basePrice = basePriceElem.html() * 1;
-    const newPrice = (basePrice * (1 - discount)).toFixed(2);
+    const newPrice = (basePrice * (1 - discount)).toFixed(2); // toFixed was used to fix decimals at the end.
     basePriceElem.html(newPrice);
   });
 };

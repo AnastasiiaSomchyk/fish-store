@@ -11,7 +11,7 @@ const whenFishesLoad = (data) => {
 };
 
 const whenFishesDontLoad = (error) => {
-  console.log('error', error);
+  console.log('this is error', error);
 };
 
 const initializer = () => {
